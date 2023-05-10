@@ -5,6 +5,7 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: 'src/web',
   resolve: {
     //设置别名
     alias: {

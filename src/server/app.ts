@@ -21,7 +21,7 @@ app.listen(3000, ()=> {
 });
 
 
-import { UserController } from "./userController";
+import { UserController } from "./controller/userController";
 
 export const getRouter = () => {
     const userController = new UserController(); // 实例化controller

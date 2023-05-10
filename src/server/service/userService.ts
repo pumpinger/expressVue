@@ -1,4 +1,4 @@
-import { getUser, IUserStatus } from "./db";
+import { getUser, IUserStatus } from "../db/db";
 
 // user相关的service
 export class UserService {
