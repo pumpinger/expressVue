@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2019", "dom"], // 编译引入的库
+    "target": "ES2019", // 编译目标
+    "module": "commonjs", // 模块类型
+    "outDir": "../../build", // 编译后的js文件地址
+    "moduleResolution": "node", // 模块解析策略
+    "esModuleInterop": true // 支持按照es6模块规范导入commonjs模块
+  },
+  "include": ["./**/*.ts"], // 包含的文件
+}
