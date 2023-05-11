@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Login',
         meta: {
             title: '登录',
-            keepAlive: true,
+            keepAlive: false,
             requireAuth: false
         },
         component: () => import('@/web/pages/login.vue')
@@ -19,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
             keepAlive: true,
             requireAuth: false
         },
-        component: () => import('@/web/pages/login.vue')
+        component: () => import('@/web/pages/user.vue')
     },
     {
         path: '/',

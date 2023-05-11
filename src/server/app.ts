@@ -3,17 +3,15 @@ import express = require('express');
 import { config } from "./config";
 // Create a new express application instance 12233
 const app: express.Application = express();
-const staticFilePath = "";
 
 
-app.use('/s', express.static(config.staticFilePath))
-app.use('/z', express.static('build/dist'))
+app.use('/static', express.static(config.staticFilePath))
 // app.use(compression());
-app.get('/h', (req, res) => {
+app.get('/hello', (req, res) => {
     res.send('Hello World!!~~~~~~!');
   });
 
-app.get('/j', (req, res) =>
+app.get('/json', (req, res) =>
 {
     res.json({name: 'json'});
 });

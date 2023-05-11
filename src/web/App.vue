@@ -6,9 +6,11 @@ const { x, y } = useMouse()
 <template>
   <div>
     <h3>Mouse: {{x}} x {{y}}</h3>
-    <router-link to="/login">goLogin</router-link>
+    <router-link :to="{name:'Login'}">goLogin</router-link>
     <br>
-    <router-link to="/">goIndex</router-link>
+    <router-link :to="{name:'Index'}">goIndex</router-link>
+    <br>
+    <router-link :to="{name:'User'}">goUser</router-link>
   </div>
   <RouterView/>
 </template>
