@@ -8,10 +8,17 @@
 import { useUserStore } from '@/web/store/user'
 
 let a:number = 3
+let b:number = a * 2
+
+let c = (p:number):string=>{
+    return String(p * 2)
+}
+
 const userStore = useUserStore()
 setTimeout(() => {
-  userStore.updateName('李四')
+  userStore.updateName(c(b))
 }, 1000)
+
 </script>
 
 <style scoped>
