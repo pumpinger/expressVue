@@ -11,7 +11,7 @@
     "web-dev": "vite",
     "web-preview": "vite preview",
     "web-build": "vite build",
-    "web-build-tsc": "vue-tsc -p src/web/tsconfig.json && vite build"
+    "web-build-tsc": "vue-tsc -p src/web/tsconfig.json  --noEmit --skipLibCheck  && vite build"
   },
   "author": "",
   "license": "ISC",

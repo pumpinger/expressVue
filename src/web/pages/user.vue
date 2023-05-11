@@ -4,7 +4,7 @@
   <div>{{ userStore.name }}</div>
 </template>
 
-<script setup>
+<script setup  lang="ts">
 import { useUserStore } from '@/web/store/user'
 
 const userStore = useUserStore()
