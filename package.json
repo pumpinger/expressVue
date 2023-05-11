@@ -1,14 +1,17 @@
 {
-  "name": "test1",
+  "name": "expressVue",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve-dev": "nodemon --watch src/server/**/*.ts  --exec ts-node src/server/app.ts",
-    "serve-build": "cd src/server & tsc",
+    "serve-dev": "cross-env NODE_ENV=dev nodemon --watch src/server/**/*.ts  --exec ts-node src/server/app.ts",
+    "serve-build": "cd src/server & cross-env NODE_ENV=prod tsc",
+    "serve-start": "node build/app.js",
+    "serve-pack": "node pack",
     "web-dev": "vite",
-    "web-build": "vue-tsc && vite build",
-    "web-preview": "vite preview"
+    "web-preview": "vite preview",
+    "web-build": "vite build",
+    "web-build-tsc": "vue-tsc && vite build"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +27,7 @@
   "devDependencies": {
     "@types/node": "^20.1.1",
     "@vitejs/plugin-vue": "^4.1.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",

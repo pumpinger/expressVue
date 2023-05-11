@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -6,6 +6,16 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Login',
         meta: {
             title: '登录',
+            keepAlive: true,
+            requireAuth: false
+        },
+        component: () => import('@/web/pages/login.vue')
+    },
+    {
+        path: '/user',
+        name: 'User',
+        meta: {
+            title: '用户列表',
             keepAlive: true,
             requireAuth: false
         },
@@ -24,7 +34,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes
 });
 

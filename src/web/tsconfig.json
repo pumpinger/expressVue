@@ -16,9 +16,9 @@
     "lib": ["esnext", "dom"],
     "baseUrl": "./",
     "paths":{
-      "@": ["src"],
-      "@/*": ["src/*"],
+      "@": ["../../src"],
+      "@/*": ["../../src/*"],
     }
   },
-  "include": ["src/web/**/*.ts", "src/web/**/*.d.ts", "src/web/**/*.tsx", "src/web/**/*.vue"]
+  "include": ["./vue-shim.d.ts","./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"]
 }

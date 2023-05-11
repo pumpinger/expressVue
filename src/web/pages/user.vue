@@ -4,10 +4,9 @@
   <div>{{ userStore.name }}</div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { useUserStore } from '@/web/store/user'
 
-let a:number = 3
 const userStore = useUserStore()
 setTimeout(() => {
   userStore.updateName('李四')

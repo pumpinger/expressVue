@@ -1,25 +1,26 @@
 import express = require('express');
 //import compression from "compression";
-
+import { config } from "./config";
 // Create a new express application instance 12233
 const app: express.Application = express();
+const staticFilePath = "";
 
-app.use('/static', express.static('./dist'))
+
+app.use('/s', express.static(config.staticFilePath))
+app.use('/z', express.static('build/dist'))
 // app.use(compression());
 app.get('/h', (req, res) => {
     res.send('Hello World!!~~~~~~!');
   });
 
-app.get('/json', (req, res) =>
+app.get('/j', (req, res) =>
 {
     res.json({name: 'json'});
 });
 
-
 app.listen(3000, ()=> {
   console.log('Example server listening on port 3000!');
 });
-
 
 import { UserController } from "./controller/userController";
 

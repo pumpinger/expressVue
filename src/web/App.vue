@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useMouse } from '@vueuse/core'
 const { x, y } = useMouse()
 </script>
