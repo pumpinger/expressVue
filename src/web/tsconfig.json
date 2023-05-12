@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "typeRoots": [
-      "node_modules/@types", // 默认值
-      "src/types"
-    ],
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -20,5 +16,5 @@
       "@/*": ["../../src/*"],
     }
   },
-  "include": ["./vue-shim.d.ts","./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"]
+  "include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx", "./**/*.vue"]
 }

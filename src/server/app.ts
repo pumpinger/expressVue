@@ -5,10 +5,17 @@ import { config } from "./config";
 const app: express.Application = express();
 
 
+const myLogger = function (req, res, next) {
+    console.log('LOGGED')
+    next()
+}
+app.use(myLogger)
+
+
 app.use('/static', express.static(config.staticFilePath))
 // app.use(compression());
 app.get('/hello', (req, res) => {
-    res.send('Hello World!!~~~~~~!');
+    res.send('Hello World!');
   });
 
 app.get('/json', (req, res) =>
@@ -16,11 +23,25 @@ app.get('/json', (req, res) =>
     res.json({name: 'json'});
 });
 
-app.listen(3000, ()=> {
-  console.log('Example server listening on port 3000!');
-});
+let port = 3000;
+const startServer = (port) => {
+    const server = app.listen(port, () => {
+        console.log(`Server is running at http://localhost:${port}`);
+    });
+
+    server.on('error', (error:ErrnoException) => {
+        if (error.code === 'EADDRINUSE') {
+            console.log(`Port ${port} is busy, trying with port ${++port}`);
+            startServer(port);
+        } else {
+            // handle other types of errors
+        }
+    });
+}
+startServer(port);
 
 import { UserController } from "./controller/userController";
+import ErrnoException = NodeJS.ErrnoException;
 
 export const getRouter = () => {
     const userController = new UserController(); // 实例化controller
