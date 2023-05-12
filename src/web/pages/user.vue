@@ -16,7 +16,7 @@ let userListRea:User[] = reactive([]);
 let userListRef = ref<User[]>([]);
 
 interface User {
-    username: string;1
+    username: string;
     email: string;
     cc?:string;
 }
